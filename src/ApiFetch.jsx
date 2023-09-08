@@ -8,15 +8,25 @@ const ApiFetch = () => {
     const [notNull, setNotNull] = useState(false)
     
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/character')
-            .then(response => response.json())
-            .then(data => {
-                setApiCharacters(data)
-                setNotNull(true)
-            })
-            .catch(error => {
-                console.error('Error al obtener:', error);
-            })
+        const useEffectData = async () => {
+            const response = await fetch('https://rickandmortyapi.com/api/character')
+            const data = await response.json()
+            console.log(data)
+            setApiCharacters(data)
+            setNotNull(true)
+
+        }
+        
+        useEffectData()
+
+            // .then(response => response.json())
+            // .then(data => {
+            //     setApiCharacters(data)
+            //     setNotNull(true)
+            // })
+            // .catch(error => {
+            //     console.error('Error al obtener:', error);
+            // })
     }, [])
 
     if(!notNull)
@@ -37,14 +47,15 @@ const ApiFetch = () => {
                 {
                     characters.map(elem => {
                         return (
-                        <Card key={elem.id} title={elem.name}>
-                            <img src={elem.image} alt={elem.name} />
-                            <p>Gender: <i>{elem.gender}</i></p>
-                            <p>Status: {elem.status}</p>
-                            <p>Species: {elem.species}</p>
-                            <p>Created: {elem.created}</p>
-                            
-                        </Card>)
+                            <Card key={elem.id} title={elem.name}>
+                                <img src={elem.image} alt={elem.name} />
+                                <p>Gender: <i>{elem.gender}</i></p>
+                                <p>Status: {elem.status}</p>
+                                <p>Species: {elem.species}</p>
+                                <p>Created: {elem.created}</p>
+                                
+                            </Card>
+                        )
                     })
                 }
             </Space>
