@@ -5,9 +5,9 @@ import { Divider, List, Button, Row, Col } from 'antd'
 const TodoList = ({todos, setTodos}) => { 
 
     const deleteTodo = (name, id) => {
-            const newTodos = [...todos]
-            newTodos.splice(id, 1)
-            setTodos(newTodos)
+        const newTodos = [...todos]
+        newTodos.splice(id, 1)
+        setTodos(newTodos)
         
     }
     
