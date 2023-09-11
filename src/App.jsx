@@ -1,30 +1,30 @@
 import { useState } from 'react'
-import Formulario from './Formulario.jsx'
-import TodoList from './TodoList.jsx'
-import TodoItem from './TodoItem.jsx'
-import ApiFetch from './ApiFetch.jsx'
-import { Button, Input, Row, Col, Form } from 'antd'
+import { useNavigate } from 'react-router-dom'
+import { Button, Input, Row, Col, Form, Card } from 'antd'
 import './App.css'
 
 function App() {
-  //const [todos, setTodos] = useState(["Trabajar", "Comer", "Dormir"])
+  
+
+  const navigate = useNavigate()
+
+
+  const gridStyle = {
+    width: '50%',
+    textAlign: 'center',
+    cursor: 'pointer'
+  };
 
   return (
     <>
+      <Card title="Routes" style={{ width: 500 }}>
 
-      <ApiFetch />
-
-
-      {/*
-      <TodoItem setTodos={setTodos}/>
-
-      <Row>
-        <Col span={16} offset={4}>
-          <TodoList todos={todos} setTodos={setTodos}/>
-        </Col>
-          
-      </Row>
-      */}
+        <Card.Grid style={gridStyle} onClick={() => navigate('/todo')}>Todo</Card.Grid>
+        <Card.Grid style={gridStyle} onClick={() => navigate('/characters')}>Characters</Card.Grid>
+        
+        
+      </Card>
+      
     </>
   )
 }

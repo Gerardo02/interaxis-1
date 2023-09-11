@@ -1,5 +1,4 @@
-
-import ApiRows from './ApiRows';
+import ApiRows from './ApiRows.jsx';
 import { useEffect, useState } from 'react';
 
 
@@ -8,6 +7,7 @@ const ApiFetch = () => {
     const [apiCharacters, setApiCharacters] = useState(null)
     const [apiCharacters2, setApiCharacters2] = useState(null)
     const [apiCharacters3, setApiCharacters3] = useState(null)
+    
 
     const [notNull, setNotNull] = useState(false)
     
@@ -28,6 +28,7 @@ const ApiFetch = () => {
             setApiCharacters2(data2)
             setApiCharacters3(data3)
             setNotNull(true)
+            console.log('hola');
 
         }
         

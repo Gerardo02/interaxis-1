@@ -1,10 +1,9 @@
-import { useState } from 'react'
 import { Divider, List, Button, Row, Col } from 'antd'
 
 
 const TodoList = ({todos, setTodos}) => { 
 
-    const deleteTodo = (name, id) => {
+    const deleteTodo = (id) => {
         const newTodos = [...todos]
         newTodos.splice(id, 1)
         setTodos(newTodos)
@@ -31,7 +30,7 @@ const TodoList = ({todos, setTodos}) => {
                                     </Col>
                                     
                                     <Col span={4} offset={12}>
-                                        <Button size='small' onClick={() => deleteTodo(item, index)}>Borrar</Button>
+                                        <Button size='small' onClick={() => deleteTodo(index)}>Borrar</Button>
                                     </Col>
                                 </Row>
                             
