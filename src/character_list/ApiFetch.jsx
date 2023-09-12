@@ -28,7 +28,6 @@ const ApiFetch = () => {
             setApiCharacters2(data2)
             setApiCharacters3(data3)
             setNotNull(true)
-            console.log('hola');
 
         }
         
