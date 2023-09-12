@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button, Input, Row, Col, Form, Card } from 'antd'
+import { Card } from 'antd'
 import './App.css'
 
 function App() {
@@ -21,6 +20,7 @@ function App() {
 
         <Card.Grid style={gridStyle} onClick={() => navigate('/todo')}>Todo</Card.Grid>
         <Card.Grid style={gridStyle} onClick={() => navigate('/characters')}>Characters</Card.Grid>
+        <Card.Grid style={gridStyle} onClick={() => navigate('/counter')}>Counter</Card.Grid>
         
         
       </Card>
