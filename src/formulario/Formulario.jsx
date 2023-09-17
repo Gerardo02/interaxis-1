@@ -4,10 +4,12 @@ import { useWatch, useForm } from 'antd/es/form/Form'
 
 
 const Formulario = () =>{
-
+    
     const [enableInputs, setEnableInputs] = useState(true)
     const [form] = useForm()
     const codigoPostal = useWatch("codigoPostal", form)
+
+    //const refresh = () => window.location.reload();
 
     useEffect(() => {
         if(codigoPostal != "") setEnableInputs(false)

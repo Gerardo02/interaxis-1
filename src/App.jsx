@@ -21,6 +21,7 @@ function App() {
         <Card.Grid style={gridStyle} onClick={() => navigate('/todo')}>Todo</Card.Grid>
         <Card.Grid style={gridStyle} onClick={() => navigate('/characters')}>Characters</Card.Grid>
         <Card.Grid style={gridStyle} onClick={() => navigate('/counter')}>Counter</Card.Grid>
+        <Card.Grid style={gridStyle} onClick={() => navigate('/formulario')}>Formulario</Card.Grid>
         
         
       </Card>
